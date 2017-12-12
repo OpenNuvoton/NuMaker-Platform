@@ -1,6 +1,6 @@
 NuMaker Platform Resource
 ----------------------------
-**1. NuMaker-PFM-NUC472/m453/M487NANO130 (mbed based)**
+**1. NuMaker-PFM-NUC472/M453/M487NANO130 (Mbed based)**
 - [Mbed OS](https://github.com/OpenNuvoton/mbed)
 - [Mbed SD File System lib](https://github.com/OpenNuvoton/NuMaker-mbed-SDFileSystem)[, example](https://developer.mbed.org/teams/Nuvoton/code/NuMaker-mbed-SDFileSystem-example/)
 - [Mbed NuBrick lib](https://github.com/OpenNuvoton/NuMaker-mbed-NuBrick)[, example](https://developer.mbed.org/teams/Nuvoton/code/NuMaker-mbed-NuBrick-example/)
