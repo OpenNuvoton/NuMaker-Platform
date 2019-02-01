@@ -21,3 +21,6 @@ NuMaker Platform Resource
 
 **4. NuMaker UNO**
 - [NuMaker UNO Arduino](https://github.com/OpenNuvoton/NuMaker_UNO)
+
+**5. NuMaker NuMicroPy**
+- [MicroPython porting for NuMaker Platform](https://github.com/OpenNuvoton/NuMicroPy)
