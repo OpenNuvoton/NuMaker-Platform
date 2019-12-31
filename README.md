@@ -28,5 +28,5 @@ NuMaker Platform Resource
 **6. M487/NANO130 (AliOS-Things based)**
 - [AliOS-Things](https://github.com/OpenNuvoton/AliOS-Things)
 
-**7. NuMaker NuMediaSDK**
+**7. NuMaker NVTMediaSDK**
 - [Nuvoton media software development kit](https://github.com/OpenNuvoton/NVTMediaSDK)
