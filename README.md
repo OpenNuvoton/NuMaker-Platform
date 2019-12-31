@@ -29,4 +29,4 @@ NuMaker Platform Resource
 - [AliOS-Things](https://github.com/OpenNuvoton/AliOS-Things)
 
 **7. NuMaker NuMediaSDK**
-- [Nuvoton media software development kit](https://github.com/OpenNuvoton/NuMediaSDK)
+- [Nuvoton media software development kit](https://github.com/OpenNuvoton/NVTMediaSDK)
