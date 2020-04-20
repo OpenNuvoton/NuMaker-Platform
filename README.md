@@ -25,8 +25,11 @@ NuMaker Platform Resource
 **5. NuMaker NuMicroPy**
 - [MicroPython porting for NuMaker Platform](https://github.com/OpenNuvoton/NuMicroPy)
 
-**6. M487/NANO130 (AliOS-Things based)**
+**6. M487/NANO130 AliOS-Things porting**
 - [AliOS-Things](https://github.com/OpenNuvoton/AliOS-Things)
 
 **7. NuMaker NVTMediaSDK**
 - [Nuvoton media software development kit](https://github.com/OpenNuvoton/NVTMediaSDK)
+
+**8. M480 RT-Thread porting**
+- [RT-Thread](https://github.com/OpenNuvoton/rt-thread)
