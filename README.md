@@ -31,5 +31,5 @@ NuMaker Platform Resource
 **7. NuMaker NVTMediaSDK**
 - [Nuvoton media software development kit](https://github.com/OpenNuvoton/NVTMediaSDK)
 
-**8. M480 RT-Thread porting**
-- [RT-Thread](https://github.com/OpenNuvoton/rt-thread)
+**8. RT-Thread porting**
+- [RT-Thread/M480](https://github.com/OpenNuvoton/rt-thread/tree/m480)
