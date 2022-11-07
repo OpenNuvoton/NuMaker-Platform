@@ -3,6 +3,9 @@ NuMaker Platform Resource
 **1. NuMaker-PFM-NUC472/M453/M487/NANO130/M252/M2351/M2354/M467 (Mbed based)**
 - [Mbed OS](https://github.com/OpenNuvoton/mbed)
 - [Mbed SD File System lib](https://github.com/OpenNuvoton/NuMaker-mbed-SDFileSystem)[, example](https://developer.mbed.org/teams/Nuvoton/code/NuMaker-mbed-SDFileSystem-example/)
+- [NuMaker-mbed-AWS-IoT-CSDK-OTA-example](https://github.com/OpenNuvoton/NuMaker-mbed-AWS-IoT-CSDK-OTA-example)
+- [NuMaker-mbed-SNMP](https://github.com/OpenNuvoton/NuMaker-mbed-SNMP)
+- [NuMaker-mbed-CustomBoard-example](https://github.com/OpenNuvoton/NuMaker-mbed-CustomBoard-example)
 - [Mbed Audio lib](https://github.com/OpenNuvoton/NuMaker-mbed-Audio)[, example](https://developer.mbed.org/teams/Nuvoton/code/NuMaker-mbed-AudioPlayback-example/)
 - [Mbed Doc](https://github.com/OpenNuvoton/NuMaker-mbed-docs)
 
