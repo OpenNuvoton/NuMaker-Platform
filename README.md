@@ -31,5 +31,18 @@ NuMaker Platform Resource
 **7. NuMaker NVTMediaSDK**
 - [Nuvoton media software development kit](https://github.com/OpenNuvoton/NVTMediaSDK)
 
-**8. RT-Thread porting**
-- [RT-Thread](https://github.com/OpenNuvoton/rt-thread/tree/nuvoton)
+**8. RT-Thread Studio SDK-BSP**
+- [sdk-bsp-numaker-m3351kj](https://github.com/OpenNuvoton/sdk-bsp-numaker-m3351kj)
+- [sdk-bsp-numaker-m3334ki](https://github.com/OpenNuvoton/sdk-bsp-numaker-m3334ki)
+- [sdk-bsp-numaker-m5531](https://github.com/OpenNuvoton/sdk-bsp-numaker-m5531)
+- [sdk-bsp-numaker-m55m1](https://github.com/OpenNuvoton/sdk-bsp-numaker-m55m1)
+- [sdk-bsp-numaker-m2l31ki](https://github.com/OpenNuvoton/sdk-bsp-numaker-m2l31ki)
+- [sdk-bsp-numaker-m467hj](https://github.com/OpenNuvoton/sdk-bsp-numaker-m467hj)
+- [sdk-bsp-numaker-iot-m467](https://github.com/OpenNuvoton/sdk-bsp-numaker-iot-m467)
+- [sdk-bsp-numaker-hmi-ma35h0](https://github.com/OpenNuvoton/sdk-bsp-numaker-hmi-ma35h0)
+- [sdk-bsp-numaker-hmi-ma35d1](https://github.com/OpenNuvoton/sdk-bsp-numaker-hmi-ma35d1)
+- [sdk-bsp-numaker-iot-ma35d0](https://github.com/OpenNuvoton/sdk-bsp-numaker-iot-ma35d0)
+- [sdk-bsp-nk-n9h30](https://github.com/OpenNuvoton/sdk-bsp-nk-n9h30)
+- [sdk-bsp-nk-980iotg1d](https://github.com/OpenNuvoton/sdk-bsp-nk-980iotg1d)
+- [sdk-bsp-nk-980iotg2d](https://github.com/OpenNuvoton/sdk-bsp-nk-980iotg2d)
+
