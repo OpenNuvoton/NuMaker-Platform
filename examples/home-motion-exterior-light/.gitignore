@@ -1,0 +1,6 @@
+/build/
+/backup/
+/.venv/
+/muse_bridge/state/
+__pycache__/
+*.pyc

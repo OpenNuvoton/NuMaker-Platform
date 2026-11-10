@@ -1,0 +1,14 @@
+<show version="1" name="Fast red and yellow" repeat="forever" end="off">
+  <responses enabled="true" page-ms="4000" hold-ms="10000"/>
+  <scene duration-ms="60000">
+    <strobe step-us="100000" brightness="70">
+      <color value="red" warm="20" cool="0"/>
+      <color value="yellow" warm="20" cool="0"/>
+    </strobe>
+    <oled contrast="160">
+      <text x="3" y="2" size="16">RED / YELLOW</text>
+      <text x="5" y="28" size="10">100 ms / color</text>
+      <text x="5" y="44" size="9">Muse custom palette</text>
+    </oled>
+  </scene>
+</show>
