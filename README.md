@@ -46,3 +46,5 @@ NuMaker Platform Resource
 - [sdk-bsp-nk-980iotg1d](https://github.com/OpenNuvoton/sdk-bsp-nk-980iotg1d)
 - [sdk-bsp-nk-980iotg2d](https://github.com/OpenNuvoton/sdk-bsp-nk-980iotg2d)
 
+**9. NuMaker reference designs**
+- [Home motion exterior light (NDA102SD2)](examples/home-motion-exterior-light/)

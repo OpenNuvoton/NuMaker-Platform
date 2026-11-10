@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:annotation><xs:documentation>
+    NuMaker show version 1. OLED is 128x64 monochrome; RGB light supports
+    RGB/HSV colors, the second light supports warm/cool white. Brightness
+    and channel values are percentages. A scene lasts 1000..60000 ms.
+    White temperature is a 0..100 warm-to-cool mix, not calibrated kelvin.
+  </xs:documentation></xs:annotation>
+  <xs:simpleType name="Percent"><xs:restriction base="xs:integer"><xs:minInclusive value="0"/><xs:maxInclusive value="100"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Byte"><xs:restriction base="xs:integer"><xs:minInclusive value="0"/><xs:maxInclusive value="255"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="X"><xs:restriction base="xs:integer"><xs:minInclusive value="0"/><xs:maxInclusive value="127"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Y"><xs:restriction base="xs:integer"><xs:minInclusive value="0"/><xs:maxInclusive value="63"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Width"><xs:restriction base="xs:integer"><xs:minInclusive value="1"/><xs:maxInclusive value="128"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Height"><xs:restriction base="xs:integer"><xs:minInclusive value="1"/><xs:maxInclusive value="64"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Duration"><xs:restriction base="xs:integer"><xs:minInclusive value="1000"/><xs:maxInclusive value="60000"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Fade"><xs:restriction base="xs:integer"><xs:minInclusive value="0"/><xs:maxInclusive value="60000"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Color"><xs:restriction base="xs:string"><xs:pattern value="#[0-9a-fA-F]{6}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Mono"><xs:restriction base="xs:string"><xs:enumeration value="black"/><xs:enumeration value="white"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Radius"><xs:restriction base="xs:integer"><xs:minInclusive value="1"/><xs:maxInclusive value="64"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="FontSize"><xs:restriction base="xs:integer"><xs:minInclusive value="6"/><xs:maxInclusive value="48"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Hue"><xs:restriction base="xs:integer"><xs:minInclusive value="0"/><xs:maxInclusive value="360"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Name"><xs:restriction base="xs:string"><xs:minLength value="1"/><xs:maxLength value="80"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Repeat"><xs:restriction base="xs:string"><xs:pattern value="forever|[1-9][0-9]{0,2}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Text"><xs:restriction base="xs:string"><xs:maxLength value="512"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Bitmap"><xs:restriction base="xs:string"><xs:maxLength value="8192"/></xs:restriction></xs:simpleType>
+  <xs:complexType name="Responses">
+    <xs:attribute name="enabled" type="xs:boolean" default="true"/>
+    <xs:attribute name="page-ms" type="Duration" default="4000"/>
+    <xs:attribute name="hold-ms" type="Duration" default="10000"/>
+  </xs:complexType>
+  <xs:complexType name="RGB">
+    <xs:attribute name="color" type="Color"/>
+    <xs:attribute name="hue" type="Hue"/>
+    <xs:attribute name="saturation" type="Percent" default="100"/>
+    <xs:attribute name="brightness" type="Percent" default="100"/>
+  </xs:complexType>
+  <xs:complexType name="White">
+    <xs:attribute name="warm" type="Percent"/>
+    <xs:attribute name="cool" type="Percent"/>
+    <xs:attribute name="temperature" type="Percent"/>
+    <xs:attribute name="brightness" type="Percent" default="100"/>
+  </xs:complexType>
+  <xs:complexType name="Cycle">
+    <xs:attribute name="step-us" use="required"><xs:simpleType><xs:restriction base="xs:integer"><xs:minInclusive value="50"/><xs:maxInclusive value="60000000"/></xs:restriction></xs:simpleType></xs:attribute>
+    <xs:attribute name="brightness" type="Percent" default="50"/>
+    <xs:attribute name="white-brightness" type="Percent" default="20"/>
+  </xs:complexType>
+  <xs:complexType name="PaletteColor">
+    <xs:attribute name="value" type="xs:string" use="required"/>
+    <xs:attribute name="warm" type="Percent" default="20"/>
+    <xs:attribute name="cool" type="Percent" default="0"/>
+  </xs:complexType>
+  <xs:complexType name="Strobe"><xs:sequence>
+    <xs:element name="color" type="PaletteColor" minOccurs="1" maxOccurs="32"/>
+  </xs:sequence>
+    <xs:attribute name="step-us" default="100000"><xs:simpleType><xs:restriction base="xs:integer"><xs:minInclusive value="50"/><xs:maxInclusive value="60000000"/></xs:restriction></xs:simpleType></xs:attribute>
+    <xs:attribute name="brightness" type="Percent" default="70"/>
+  </xs:complexType>
+  <xs:complexType name="TextShape"><xs:simpleContent><xs:extension base="Text">
+    <xs:attribute name="x" type="X" default="0"/><xs:attribute name="y" type="Y" default="0"/>
+    <xs:attribute name="size" type="FontSize" default="10"/>
+    <xs:attribute name="color" type="Mono" default="white"/>
+  </xs:extension></xs:simpleContent></xs:complexType>
+  <xs:complexType name="Rect">
+    <xs:attribute name="x" type="X" use="required"/><xs:attribute name="y" type="Y" use="required"/>
+    <xs:attribute name="width" type="Width" use="required"/><xs:attribute name="height" type="Height" use="required"/>
+    <xs:attribute name="fill" type="xs:boolean" default="false"/><xs:attribute name="color" type="Mono" default="white"/>
+  </xs:complexType>
+  <xs:complexType name="Circle">
+    <xs:attribute name="x" type="X" use="required"/><xs:attribute name="y" type="Y" use="required"/>
+    <xs:attribute name="radius" type="Radius" use="required"/>
+    <xs:attribute name="fill" type="xs:boolean" default="false"/><xs:attribute name="color" type="Mono" default="white"/>
+  </xs:complexType>
+  <xs:complexType name="Line">
+    <xs:attribute name="x1" type="X" use="required"/><xs:attribute name="y1" type="Y" use="required"/>
+    <xs:attribute name="x2" type="X" use="required"/><xs:attribute name="y2" type="Y" use="required"/>
+    <xs:attribute name="color" type="Mono" default="white"/>
+  </xs:complexType>
+  <xs:complexType name="Pixel">
+    <xs:attribute name="x" type="X" use="required"/><xs:attribute name="y" type="Y" use="required"/>
+    <xs:attribute name="color" type="Mono" default="white"/>
+  </xs:complexType>
+  <xs:complexType name="BitmapShape"><xs:simpleContent><xs:extension base="Bitmap">
+    <xs:attribute name="x" type="X" use="required"/><xs:attribute name="y" type="Y" use="required"/>
+    <xs:attribute name="width" type="Width" use="required"/><xs:attribute name="height" type="Height" use="required"/>
+    <xs:attribute name="encoding" default="hex"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="hex"/><xs:enumeration value="base64"/></xs:restriction></xs:simpleType></xs:attribute>
+  </xs:extension></xs:simpleContent></xs:complexType>
+  <xs:complexType name="OLED">
+    <xs:choice minOccurs="0" maxOccurs="256">
+      <xs:element name="text" type="TextShape"/><xs:element name="rect" type="Rect"/>
+      <xs:element name="circle" type="Circle"/><xs:element name="line" type="Line"/>
+      <xs:element name="pixel" type="Pixel"/><xs:element name="bitmap" type="BitmapShape"/>
+    </xs:choice>
+    <xs:attribute name="on" type="xs:boolean" default="true"/>
+    <xs:attribute name="contrast" type="Byte" default="160"/>
+    <xs:attribute name="invert" type="xs:boolean" default="false"/>
+    <xs:attribute name="background" type="Mono" default="black"/>
+  </xs:complexType>
+  <xs:complexType name="Scene"><xs:sequence>
+    <xs:element name="rgb" type="RGB" minOccurs="0"/>
+    <xs:element name="white" type="White" minOccurs="0"/>
+    <xs:element name="cycle" type="Cycle" minOccurs="0"/>
+    <xs:element name="strobe" type="Strobe" minOccurs="0"/>
+    <xs:element name="oled" type="OLED" minOccurs="0"/>
+  </xs:sequence>
+    <xs:attribute name="duration-ms" type="Duration" use="required"/>
+    <xs:attribute name="fade-ms" type="Fade" default="0"/>
+  </xs:complexType>
+  <xs:element name="show"><xs:complexType><xs:sequence>
+    <xs:element name="responses" type="Responses" minOccurs="0"/>
+    <xs:element name="scene" type="Scene" minOccurs="1" maxOccurs="64"/>
+  </xs:sequence>
+    <xs:attribute name="version" use="required" fixed="1"/>
+    <xs:attribute name="name" type="Name" default="NuMaker show"/>
+    <xs:attribute name="repeat" type="Repeat" default="1"/>
+    <xs:attribute name="end" default="hold"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="hold"/><xs:enumeration value="off"/></xs:restriction></xs:simpleType></xs:attribute>
+  </xs:complexType></xs:element>
+</xs:schema>

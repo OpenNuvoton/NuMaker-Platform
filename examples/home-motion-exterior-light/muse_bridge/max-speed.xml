@@ -1,0 +1,12 @@
+<show version="1" name="Maximum native color speed" repeat="forever" end="off">
+  <responses enabled="true" page-ms="4000" hold-ms="10000"/>
+  <scene duration-ms="60000">
+    <cycle step-us="50" brightness="70" white-brightness="20"/>
+    <oled contrast="160">
+      <text x="5" y="1" size="18">MAX SPEED</text>
+      <text x="5" y="26" size="10">50 us / color step</text>
+      <text x="5" y="42" size="9">RGB + warm/cool</text>
+      <line x1="5" y1="58" x2="122" y2="58"/>
+    </oled>
+  </scene>
+</show>
