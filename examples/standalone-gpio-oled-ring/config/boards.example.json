@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "boards": [
+    {"board": "sensor", "port": "COM11", "debugger": "0x00000000", "parent": "USB\\VID_0416&PID_5200\\REPLACE_SENSOR_INSTANCE"},
+    {"board": "dt57", "port": "COM5", "debugger": "0x12345678", "parent": "USB\\VID_0416&PID_5200\\REPLACE_RELAY_INSTANCE"},
+    {"board": "lighting", "port": "COM3", "debugger": "0x12345679", "parent": "USB\\VID_0416&PID_5200\\REPLACE_LIGHTING_INSTANCE"}
+  ]
+}

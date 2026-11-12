@@ -1,0 +1,27 @@
+name: Standalone GPIO OLED ring
+on:
+  push:
+    paths:
+      - 'examples/standalone-gpio-oled-ring/**'
+      - '.github/workflows/standalone-gpio-ring.yml'
+  pull_request:
+    paths:
+      - 'examples/standalone-gpio-oled-ring/**'
+      - '.github/workflows/standalone-gpio-ring.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/standalone-gpio-oled-ring
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Arm toolchain
+        run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi
+      - name: Native protocol/policy checks and MCU builds
+        run: python3 tools/verify.py --build
+      - name: PowerShell syntax and flash configuration guards
+        shell: pwsh
+        run: tools/check_scripts.ps1
