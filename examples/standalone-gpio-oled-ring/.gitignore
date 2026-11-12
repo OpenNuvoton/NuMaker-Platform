@@ -1,0 +1,6 @@
+build/
+backup/
+config/boards.local.json
+__pycache__/
+*.pyc
+.venv/
